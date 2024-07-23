@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const TableContainer = () => {
-  const API = "https://dummyjson.com/products";
-
+  
   const [dataSource, setDataSource] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [modalMode,setModalMode] = useState('add');
@@ -19,7 +18,10 @@ const TableContainer = () => {
     rating: "",
     stock: "",
   });
-  const fetchApi = async (url) => {
+  
+  const API = "https://dummyjson.com/products";
+
+   const fetchApi = async (url) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
